@@ -25,9 +25,6 @@ yarn-error.log*
 # testing
 /coverage
 
-# production
-
-
 # misc
 .DS_Store
 .env

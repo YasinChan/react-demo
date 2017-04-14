@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import './new.css';
+import TodoInput from './TodoInput'
 
 class App extends Component {
-    render() {
-        return ( <
-            div className = "App" >
-            <
-            div className = "App-header wrap" >
-            <
-            h2 > Hello React! < /h2> < /
-            div > <
-            /div>
-        );
+  constructor(props){
+    super(props)
+    this.state = {
+      newTodo: 'test',
+      todoList: [
+        {
+          id:1, 
+          title: '第一个代办'
+        }
+      ]
     }
+  }
+  render() {
+    let todos = this.state.todoList.map((item,index)=>{
+      return <li>{item.title}</li>
+    })
+    return (
+      <div className="App">
+        <div className="inputWrapper">
+          <TodoInput content={this.state.newTodo}/>
+        </div>
+        <ol>
+          {todos}
+        </ol>
+      </div>
+    )
+  }
 }
 
 export default App;

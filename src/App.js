@@ -16,7 +16,9 @@ class App extends Component {
   }
   render() {
 
-    let todos = this.state.todoList.map((item,index)=>{
+    let todos = this.state.todoList
+       .filter((item)=> !item.deleted)
+       .map((item,index)=>{
       return ( // 为什么这里要加个括号？这是动手题3 🐸
         <li key={index} >
           <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
@@ -32,7 +34,7 @@ class App extends Component {
             onChange={this.changeTitle.bind(this)}
             onSubmit={this.addTodo.bind(this)} />
         </div>
-        <ol>
+        <ol className="todoList">
           {todos}
         </ol>
       </div>

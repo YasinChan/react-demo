@@ -1,9 +1,10 @@
     body {
-        background: #ddd;
+        background: #CCC;
     }
     
     #root {
         display: flex;
         justify-content: center;
         min-height: 100vh;
+        padding: 20px;
     }

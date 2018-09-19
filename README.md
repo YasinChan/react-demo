@@ -1,3 +1,3 @@
 预览： 
 
-[demo](https://yasinchan.com/react-demo/build/index.html)
+[demo](https://git.yasinchan.com/react-demo/build/index.html)
